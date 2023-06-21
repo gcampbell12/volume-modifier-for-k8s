@@ -27,7 +27,7 @@ check: check-proto
 
 .PHONY: linux/$(ARCH) bin/volume-modifier-for-k8s
 linux/$(ARCH): bin/volume-modifier-for-k8s
-bin/volume-modifier-for-k8s: | bin
+bin/volume-modifier-for-k8s:
 	CGO_ENABLED=0 GOOS=linux GOARCH=$(ARCH) go build -mod=mod -ldflags ${LDFLAGS} -o bin/volume-modifier-for-k8s ./cmd
 
 .PHONY: check-proto
